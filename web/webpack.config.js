@@ -55,6 +55,7 @@ module.exports = (env = {}) => ({
     hot: true,
     stats: 'minimal',
     contentBase: __dirname,
-    overlay: true
+    overlay: true,
+    port: 9000
   }
 })
