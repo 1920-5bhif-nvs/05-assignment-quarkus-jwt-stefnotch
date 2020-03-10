@@ -51,10 +51,7 @@ export default {
 </script>
 
 <style scoped>
-    img {
-        width: 200px;
-    }
-    h1 {
-        font-family: Arial, Helvetica, sans-serif;
-    }
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 </style>
