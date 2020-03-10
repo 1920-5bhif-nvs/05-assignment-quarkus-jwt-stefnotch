@@ -1,7 +1,10 @@
 package at.htl.rest;
 
 import at.htl.model.Person;
+import org.jboss.resteasy.annotations.cache.NoCache;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -16,9 +19,12 @@ import java.util.Random;
 @Path("person")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@PermitAll
 public class PersonResource {
 
     @GET
+    @NoCache
+    @PermitAll
     public Response getAll() {
         Random random = new Random(253245L);
 
