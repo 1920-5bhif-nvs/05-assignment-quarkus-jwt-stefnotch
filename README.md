@@ -32,6 +32,17 @@ quarkus.keycloak.policy-enforcer.paths.Person.enforcement-mode=DISABLED
 ```
 http://localhost:8080/person
 ```
+A public list of people
+
+```
+http://localhost:8080/admin
+```
+The administrator, is a protected route
+
+```
+http://localhost:8080/login
+```
+Working around CORS issues
 
 ## Running the application in dev mode
 
@@ -55,3 +66,8 @@ cd web
 npm i
 npm run dev
 ```
+
+And there you can login with 
+- `alice`:`alice`
+- `jdoe`:`jdoe`
+- `admin`:`admin`
