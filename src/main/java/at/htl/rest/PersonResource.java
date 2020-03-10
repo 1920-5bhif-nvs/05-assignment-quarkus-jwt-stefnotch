@@ -33,6 +33,6 @@ public class PersonResource {
         for (int i = 0; i < 10; i++) {
             people.add(Person.randomPerson(random));
         }
-        return Response.ok().build();
+        return Response.ok().entity(people).build();
     }
 }
