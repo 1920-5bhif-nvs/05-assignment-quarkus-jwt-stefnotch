@@ -27,6 +27,21 @@ quarkus.keycloak.policy-enforcer.paths.Person.path=/person
 quarkus.keycloak.policy-enforcer.paths.Person.enforcement-mode=DISABLED
 ```
 
+- @RolesAllowed("role") does work, however, it first checks with Keycloak. So, if you want to do that RBAC stuff on the Quarkus side, you have to change the protected resources in Keycloak.
+```diff
+      "resources": [
+        {
+          "name": "User Resource",
+          "ownerManagedAccess": false,
+          "attributes": {},
+          "_id": "df1b74a9-3f10-499d-a581-368de48e512b",
+          "uris": [
+-            "/api/users/*"
++            "/*"
+          ]
+        },
+```
+
 ## Endpoints
 
 ```
