@@ -12,6 +12,7 @@ Futhermore, it uses a modified version of [this `docker-compose.yml` file](https
 Regarding anonymous or public access, this is a relevant Quarkus issue https://github.com/quarkusio/quarkus/issues/6807
 
 And here is a relevant comment https://github.com/quarkusio/quarkus/issues/2231#issuecomment-597147382
+(If you want them to get fixed faster, upvote them by adding a :+1:)
 
 The status quo seems to be something like this
 - By default, everything is protected
