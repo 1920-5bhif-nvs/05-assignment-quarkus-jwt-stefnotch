@@ -42,6 +42,15 @@ quarkus.keycloak.policy-enforcer.paths.Person.enforcement-mode=DISABLED
         },
 ```
 
+## Keycloak Login
+
+You need an access token to access most endpoints. To get the access token, you have to send a `POST` call to `<keycloak server url>/auth/realms/quarkus/protocol/openid-connect/token` with the correct parameters. This includes the `client-id` and `secret`.
+
+(The alternative is somehow using the Keycloak login page and possibly a different auth flow. I wouldn't know about that though, the tutorials are pretty bad.)
+
+Now, since the `client-id` and `secret` aren't supposed to be in the frontend's source code, we have to [do that API call from the backend](https://github.com/1920-5bhif-nvs/05-assignment-quarkus-jwt-stefnotch/blob/master/src/main/java/at/htl/service/LoginService.java). This also avoids CORS issues. Furthermore, it means that you don't have to expose your Keycloak to the public anymore, which may or may not be an advantage.
+
+
 ## Endpoints
 A public list of people
 ```
@@ -53,7 +62,7 @@ The administrator, is a protected route
 http://localhost:8080/admin
 ```
 
-Working around CORS issues, it might be possible to use the Keycloak login page instead of this
+Forwards stuff to the Keycloak login
 ```
 http://localhost:8080/login
 ```
