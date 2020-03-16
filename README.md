@@ -43,21 +43,21 @@ quarkus.keycloak.policy-enforcer.paths.Person.enforcement-mode=DISABLED
 ```
 
 ## Endpoints
-
+A public list of people
 ```
 http://localhost:8080/person
 ```
-A public list of people
 
+The administrator, is a protected route
 ```
 http://localhost:8080/admin
 ```
-The administrator, is a protected route
 
+Working around CORS issues, it might be possible to use the Keycloak login page instead of this
 ```
 http://localhost:8080/login
 ```
-Working around CORS issues
+
 
 ## Running the application in dev mode
 
