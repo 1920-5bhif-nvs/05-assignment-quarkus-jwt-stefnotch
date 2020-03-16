@@ -1,6 +1,6 @@
 <template>
   <div>
-    <login-form v-if="!oidc.accessToken" v-bind:server-url="oidc.url" v-bind:client-id="oidc.clientId" v-bind:secret="oidc.secret" v-on:logged-in="oidc.onLoggedIn"></login-form>
+    <login-form v-if="!oidc.accessToken" v-bind:server-url="oidc.url" v-on:logged-in="oidc.onLoggedIn"></login-form>
     <div v-else>
       <span>Made with Vue <img src="./logo.png" class="icon" /></span>
       <h1>Hello!</h1>
@@ -50,8 +50,6 @@ export default {
 
 function useOpenIDConnect() {
   let url = ref( "http://localhost:8080/login");
-  let clientId = ref( "backend-service");
-  let secret = ref( "secret");
   let accessToken = ref( "");
   let authHeader = computed(() => {return {"Authorization": `Bearer ${accessToken.value}`}});
   let onLoggedIn = (event) => {
@@ -60,8 +58,6 @@ function useOpenIDConnect() {
 
   return {
     url,
-    clientId,
-    secret,
     accessToken,
     authHeader,
     onLoggedIn

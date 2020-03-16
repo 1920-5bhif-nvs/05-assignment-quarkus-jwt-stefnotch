@@ -33,9 +33,6 @@ export default {
 
             fetch(props.serverUrl, {
                 method: "POST",
-                headers: new Headers({
-                    "Authorization": `Basic ${btoa(props.clientId + ":" + props.secret)}`,
-                }),
                 body: form
             })
                 .then(response => response.json())
